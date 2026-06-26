@@ -104,6 +104,7 @@ def get_features():
     margin_map = {"清晰": 0, "不清": 1}
     shape_map = {"规则": 0, "不规则": 1}
     taller_map = {"<1": 0, ">1": 1}
+    have_map = {"无": 0, "有": 1}    # 新增这一行
 
     features = [
         age,                                    # 1. Age
@@ -123,8 +124,8 @@ def get_features():
         comp_map[composition],                  # 15. Composition
         margin_map[margin],                     # 16. Margin
         shape_map[shape],                       # 17. Shape
-        taller_map[taller_than_wide],           # 18. Taller.than.wide
-        yes_no[hyperechoic],                    # 19. Hyperechoic
+        have_map[hyperechoic],                  # 19. Hyperechoic   ← 改这里
+        have_map[blood_flow],                   # 20. US.blood.flow.signal  ← 改这里
         yes_no[blood_flow],                     # 20. US.blood.flow.signal
         uric_acid,                              # 21. Uric.Acid
         creatinine,                             # 22. Creatinine
