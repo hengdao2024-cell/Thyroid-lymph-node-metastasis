@@ -164,13 +164,17 @@ def get_features():
 if st.button("🔍 开始预测"):
     input_vector = get_features()
 
-    # 可选：检查回声类型至少选一个
+    # 检查回声类型至少选一个
     if not any([hypoechoic, slightly_hypo, isoechoic, mix_echo]):
         st.warning("⚠️ 您未选择任何回声类型，建议至少选择一项以获得合理预测。")
 
     try:
-        pred_class = model.predict(input_vector)[0]
-        proba = model.predict_proba(input_vector)[0]
+        # 将 numpy 数组转换为 DataFrame，列名从模型中自动获取
+        feature_names = model.feature_names_in_
+        input_df = pd.DataFrame(input_vector, columns=feature_names)
+
+        pred_class = model.predict(input_df)[0]
+        proba = model.predict_proba(input_df)[0]
         prob_met = proba[1]   # 淋巴结转移概率
         prob_no = proba[0]    # 无转移概率
 
