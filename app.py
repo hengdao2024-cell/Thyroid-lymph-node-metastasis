@@ -124,6 +124,7 @@ def get_features():
         comp_map[composition],                  # 15. Composition
         margin_map[margin],                     # 16. Margin
         shape_map[shape],                       # 17. Shape
+        taller_map[taller_than_wide],           # 18. Taller.than.wide
         have_map[hyperechoic],                  # 19. Hyperechoic   ← 改这里
         have_map[blood_flow],                   # 20. US.blood.flow.signal  ← 改这里
         uric_acid,                              # 21. Uric.Acid
