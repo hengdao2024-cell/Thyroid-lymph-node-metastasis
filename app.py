@@ -126,7 +126,6 @@ def get_features():
         shape_map[shape],                       # 17. Shape
         have_map[hyperechoic],                  # 19. Hyperechoic   ← 改这里
         have_map[blood_flow],                   # 20. US.blood.flow.signal  ← 改这里
-        yes_no[blood_flow],                     # 20. US.blood.flow.signal
         uric_acid,                              # 21. Uric.Acid
         creatinine,                             # 22. Creatinine
         total_protein,                          # 23. Total.Protein
